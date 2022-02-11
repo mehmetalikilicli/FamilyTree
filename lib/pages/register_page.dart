@@ -118,9 +118,12 @@ class _Register_PageState extends State<Register_Page>
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                print(noteController.text);
+                registerSave();
+              },
               child: Text(
-                "kaydet",
+                "Kaydet",
                 style: TextStyle(
                   color: Color(0xFF8DC540),
                   fontSize: 16,
@@ -395,7 +398,7 @@ class _Register_PageState extends State<Register_Page>
                 children: [
                   Material(
                     child: Text(
-                      "Galeri ? Kamera ?",
+                      "Galeri ? - Kamera ?",
                       style: TextStyle(
                         backgroundColor: CupertinoColors.white,
                         fontSize: 28,
@@ -414,7 +417,10 @@ class _Register_PageState extends State<Register_Page>
                               _imageFromGallery();
                               Navigator.pop(context);
                             },
-                            child: Text("Galeri")),
+                            child: Text(
+                              "Galeri",
+                              style: TextStyle(color: Colors.black),
+                            )),
                         ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
@@ -424,7 +430,10 @@ class _Register_PageState extends State<Register_Page>
                               _imageFromCamera();
                               Navigator.pop(context);
                             },
-                            child: Text("Kamera")),
+                            child: Text(
+                              "Kamera",
+                              style: TextStyle(color: Colors.black),
+                            )),
                       ]),
                 ],
               )),
