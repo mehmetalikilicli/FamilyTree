@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+  <g id="Group_281" data-name="Group 281" transform="translate(-144 -362)">
+    <g id="Group_34" data-name="Group 34" transform="translate(43.297 116.204)">
+      <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(103.703 248.796)" fill="#707070" stroke="#707070" stroke-width="1">
+        <circle cx="41" cy="41" r="41" stroke="none"/>
+        <circle cx="41" cy="41" r="40.5" fill="none"/>
+      </g>
+      <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(100.703 245.796)" fill="none" stroke="#707070" stroke-width="1">
+        <circle cx="44" cy="44" r="44" stroke="none"/>
+        <circle cx="44" cy="44" r="43.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_280" data-name="Group 280">
+      <g id="No" transform="translate(204.243 397.24) rotate(45)">
+        <rect id="Rectangle_1445" data-name="Rectangle 1445" width="10" height="10" fill="none"/>
+        <path id="Union_3" data-name="Union 3" d="M4.778,5.647.869,9.557,0,8.687,3.909,4.778,0,.869.869,0l3.91,3.909L8.687,0l.869.869-3.91,3.91,3.91,3.909-.869.869Z" fill="#fff"/>
+      </g>
+      <g id="Profile" transform="translate(172 390)">
+        <path id="Union_1" data-name="Union 1" d="M0,32.243v-4.03c0-4.434,7.255-8.062,16.122-8.062s16.122,3.627,16.122,8.062v4.03ZM8.06,8.062a8.061,8.061,0,1,1,8.062,8.06A8.062,8.062,0,0,1,8.06,8.062Z" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
