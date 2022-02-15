@@ -1,7 +1,9 @@
 import 'package:family_tree/components/colors.dart';
+import 'package:family_tree/components/lists.dart';
 import 'package:family_tree/utils/utils.dart';
 import 'package:family_tree/pages/register_page.dart';
 import 'package:family_tree/widgets/my_textstyle.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -13,6 +15,9 @@ class Homa_Page extends StatefulWidget {
 }
 
 class _Homa_PageState extends State<Homa_Page> {
+  bool isVisible = false;
+  bool popupAddAnother = false;
+
   @override
   Widget build(BuildContext context) {
     String appBarTitleText = "Aile Ağacı";
@@ -68,34 +73,99 @@ class _Homa_PageState extends State<Homa_Page> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Register_Page()),
-                    ).then((_) {
-                      setState(() {
-                        user?.userProfileImage != null
-                            ? Image.file(
-                                user!.userProfileImage!,
-                              )
-                            : SvgPicture.asset(
+                    ).then(
+                      (_) {
+                        setState(
+                          () {
+                            for (var item in userList) {
+                              print(item.userName);
+                            }
+                            if (userList.last.userProfileImage != null) {
+                              child:
+                              Image.file(
+                                userList.last.userProfileImage!,
+                              );
+                              SizedBox(
+                                height: height * 0.0225,
+                              );
+                            } else {
+                              SvgPicture.asset(
                                 "assets/images/add_profile.svg",
                               );
-                      });
-                    });
+                            }
+                          },
+                        );
+                      },
+                    );
                   },
-                  child: user?.userProfileImage != null
+                  child: userList.last.userProfileImage != null
                       ? Column(
                           children: [
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  isVisible = !isVisible;
+                                });
+                              },
+                              child: Column(
+                                children: [
+                                  isVisible
+                                      ? Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            GestureDetector(
+                                              child: SvgPicture.asset(
+                                                "assets/images/eye_grey.svg",
+                                              ),
+                                              onTap: () {},
+                                            ),
+                                            GestureDetector(
+                                              child: SvgPicture.asset(
+                                                "assets/images/add_profile_grey.svg",
+                                              ),
+                                              onTap: () {
+                                                showPopup();
+                                              },
+                                              onLongPress: () {
+                                                print("Akraba Ekle");
+                                              },
+                                            ),
+                                            GestureDetector(
+                                              child: SvgPicture.asset(
+                                                "assets/images/edit.svg",
+                                              ),
+                                              onTap: () {},
+                                            ),
+                                            GestureDetector(
+                                              child: SvgPicture.asset(
+                                                "assets/images/delete.svg",
+                                              ),
+                                              onTap: () {},
+                                            ),
+                                          ],
+                                        )
+                                      : Container(
+                                          height: 40,
+                                        ),
+                                  SvgPicture.asset(
+                                    "assets/images/add_another_person.svg",
+                                  ),
+                                ],
+                              ),
+                            ),
                             CircleAvatar(
                               backgroundImage: Image.file(
-                                user!.userProfileImage!,
+                                userList.last.userProfileImage!,
                                 fit: BoxFit.cover,
                               ).image,
                               radius: width * 0.1,
                             ),
-                            SizedBox(
-                              height: height * 0.0225,
-                            ),
                             myTextstyle(
                                 text:
-                                    "${user?.userName}  ${user!.userSurname}"),
+                                    "${userList.last.userName}  ${userList.last.userSurname}"),
                           ],
                         )
                       : Column(
@@ -167,6 +237,69 @@ class _Homa_PageState extends State<Homa_Page> {
           ),
         ],
       ),
+    );
+  }
+
+  void showPopup() {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext builder) {
+        return CupertinoPopupSurface(
+          child: Container(
+              color: CupertinoColors.white,
+              alignment: Alignment.center,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).copyWith().size.height * 0.4,
+              child: GridView.builder(
+                itemCount: items.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 3,
+                  mainAxisSpacing: 3,
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context);
+                        },
+                        child: GestureDetector(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SvgPicture.asset(items[index].image),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(items[index].text,
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black,
+                                        decoration: TextDecoration.none),
+                                    textAlign: TextAlign.center),
+                              ],
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Register_Page(),
+                              ),
+                            ).then((value) => null);
+                          },
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              )),
+          isSurfacePainted: true,
+        );
+      },
     );
   }
 }

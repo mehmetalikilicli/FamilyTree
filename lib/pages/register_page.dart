@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:family_tree/components/colors.dart';
 import 'package:family_tree/components/custom_textfield.dart';
+import 'package:family_tree/components/lists.dart';
 import 'package:family_tree/utils/utils.dart';
 import 'package:family_tree/models/user.dart';
 import 'package:family_tree/widgets/my_textstyle.dart';
@@ -212,7 +213,7 @@ class _Register_PageState extends State<Register_Page>
               yearController: birthYearController,
             ),
             registerPageTextWidget(
-              text: 'Evlilik Tarihi',
+              text: 'Evlilik Tarihi (isteğe bağlı)',
             ),
             register_page_birth_day_month_year(
               dayController: marriedDaycontroller,
@@ -263,7 +264,7 @@ class _Register_PageState extends State<Register_Page>
               ],
             ),
             registerPageTextWidget(
-              text: 'Ölüm Tarihi',
+              text: 'Ölüm Tarihi (devre dışı bırak)',
             ),
             register_page_birth_day_month_year(
               dayController: deathDayController,
@@ -446,7 +447,8 @@ class _Register_PageState extends State<Register_Page>
   void registerSave() {
     User userTemp =
         User(nameController.text, surnameController.text, selectedImageFile!);
-    user = userTemp;
+    //user = userTemp;
+    userList.add(userTemp);
     Navigator.pop(context);
   }
 }

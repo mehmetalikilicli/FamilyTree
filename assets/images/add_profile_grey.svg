@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_285" data-name="Group 285" transform="translate(12410 416)">
+    <circle id="Ellipse_240" data-name="Ellipse 240" cx="20" cy="20" r="20" transform="translate(-12410 -416)" fill="#eefadf"/>
+    <g id="Group_283" data-name="Group 283" transform="translate(0.314 -0.547)">
+      <g id="No" transform="translate(-12381.823 -401.708) rotate(45)">
+        <rect id="Rectangle_1445" data-name="Rectangle 1445" width="6.707" height="6.707" fill="none"/>
+        <path id="Union_3" data-name="Union 3" d="M3.132,3.7.569,6.264,0,5.694,2.562,3.132,0,.569.569,0,3.132,2.562,5.694,0l.57.569L3.7,3.132,6.264,5.694l-.57.57Z" fill="#8dc540"/>
+      </g>
+      <g id="Profile" transform="translate(-12399.314 -404.453)">
+        <path id="Union_1" data-name="Union 1" d="M0,16.976V14.855C0,12.52,3.82,10.61,8.488,10.61s8.488,1.91,8.488,4.245v2.122ZM4.244,4.245A4.244,4.244,0,1,1,8.488,8.488,4.244,4.244,0,0,1,4.244,4.245Z" fill="#8dc540"/>
+      </g>
+    </g>
+  </g>
+</svg>
