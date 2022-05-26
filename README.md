@@ -1,16 +1,6 @@
-# family_tree
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![1](https://user-images.githubusercontent.com/58392243/170452593-2ec0c02a-abfb-4bb8-8c77-dcf97edef766.PNG)
+![2](https://user-images.githubusercontent.com/58392243/170452601-4c540212-5f00-437b-8508-b4079f531255.PNG)
+![3](https://user-images.githubusercontent.com/58392243/170452603-eae2d313-858b-470d-a9a0-207d1ffcb232.PNG)
+![4](https://user-images.githubusercontent.com/58392243/170452608-3caa47d4-795a-43f3-9320-ae52cf6871c8.PNG)
+![5](https://user-images.githubusercontent.com/58392243/170452610-b912418a-1dd3-4ca7-8c6a-ce0f47029cc6.PNG)
+![6](https://user-images.githubusercontent.com/58392243/170452617-ab93cff2-7cf3-4f39-a97f-b77366bfe4a9.PNG)
